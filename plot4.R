@@ -1,7 +1,7 @@
 rm(list=ls())
 library(lubridate)
 library(datasets)
-setwd("/Users/himabindu/Desktop/coursera/data")
+
 data<-read.csv("household_power_consumption.txt",header=TRUE,sep=";",dec=".",stringsAsFactors=FALSE)
 data$Date1<-as.Date(data$Date,"%d/%m/%Y")
 
@@ -22,7 +22,7 @@ subdata$Global_reactive_power<-as.numeric(subdata$Global_reactive_power)
 subdata$Voltage<-as.numeric(subdata$Voltage)
 
 ## plotting
-png(filename="plot4.png",width=480,height=480)
+png(filename="ExData_Plotting1/figure/plot4.png",width=480,height=480)
 par(mfrow=c(2,2))   ## asking for two rowsa nd two columns for plotting
 par(mar=c(5,4,2,2)) 
 plot(subdata$datetime,subdata$Global_active_power,type="l",xlab="",ylab="Global Active Power(kilowatts)")
